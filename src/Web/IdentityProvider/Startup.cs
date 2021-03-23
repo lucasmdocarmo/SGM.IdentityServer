@@ -65,6 +65,7 @@ namespace IdentityProvider
                         sqlOptions.MigrationsAssembly(migrationsAssembly);
                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
                     });
+
             }).AddOperationalStore(options =>
             {
                 options.ConfigureDbContext = builder => builder.UseSqlServer(connectionString,
